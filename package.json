@@ -1,0 +1,59 @@
+{
+  "name": "wot-daemon",
+  "version": "0.1.0",
+  "description": "Desktop daemon for wot development",
+  "main": "app/index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:elin-moco/wot-daemon.git"
+  },
+  "keywords": [
+    "iot",
+    "wot",
+    "arduino",
+    "johnny-five",
+    "firmata"
+  ],
+  "author": "Eddie Lin",
+  "license": "Apache License 2.0",
+  "bugs": {
+    "url": "https://github.com/elin-moco/wot-daemon/issues"
+  },
+  "homepage": "https://github.com/elin-moco/wot-daemon",
+  "window": {
+    "show": true,
+    "toolbar": false,
+    "frame": true,
+    "position": "center",
+    "width": 480,
+    "height": 320,
+    "min_width": 480,
+    "min_height": 320,
+    "resizable": false,
+    "always-on-top": true,
+    "show_in_taskbar": true,
+    "kiosk": false
+  },
+  "chromium-args": "--child-clean-exit",
+  "dependencies": {
+    "serialport-io": "^0.1.0"
+  },
+  "devDependencies": {
+    "del": "^1.2.0",
+    "gulp": "^3.9.0",
+    "gulp-gzip": "^1.2.0",
+    "gulp-jscs": "^1.6.0",
+    "gulp-jscs-stylish": "^1.1.0",
+    "gulp-jshint": "^1.11.2",
+    "gulp-jsonlint": "^1.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sloc": "^1.0.4",
+    "gulp-tar": "^1.4.0",
+    "gulp-zip": "^3.0.2",
+    "jscs-jsdoc": "^1.1.0",
+    "nw-builder": "^2.0.2"
+  }
+}
