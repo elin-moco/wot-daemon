@@ -11,12 +11,13 @@
 
   require('serialport-io/server.js');
   var gui = require('nw.gui');
-
   var win = gui.Window.get();
   var tray;
+  var closeButton = document.getElementById('close');
 
-  win.on('minimize', function() {
-    this.hide();
+  win.focus();
+  closeButton.addEventListener('click', function() {
+    win.close();
   });
 
   tray = new gui.Tray({
@@ -27,7 +28,7 @@
 
   var menu = new gui.Menu();
   menu.append(new gui.MenuItem({
-    label: 'WoT daemon',
+    label: 'About',
     click: function() {
       if (confirm('WoT Daemon: Web of Things made easy.\n' +
         'Visit our web site for more information?')) {
@@ -40,6 +41,12 @@
     label: 'Show',
     click: function() {
       win.show();
+    }
+  }));
+  menu.append(new gui.MenuItem({
+    label: 'Hide',
+    click: function() {
+      win.hide();
     }
   }));
   menu.append(new gui.MenuItem({type: 'separator'}));

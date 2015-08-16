@@ -1,6 +1,6 @@
 {
   "name": "wot-daemon",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Desktop daemon for wot development",
   "main": "app/index.html",
   "scripts": {
@@ -26,7 +26,7 @@
   "window": {
     "show": true,
     "toolbar": false,
-    "frame": true,
+    "frame": false,
     "position": "center",
     "width": 480,
     "height": 320,
@@ -34,7 +34,7 @@
     "min_height": 320,
     "resizable": false,
     "always-on-top": true,
-    "show_in_taskbar": true,
+    "show_in_taskbar": false,
     "kiosk": false
   },
   "chromium-args": "--child-clean-exit",
