@@ -1,14 +1,17 @@
-<DOCTYPE html>
-<html lang="en">
+<html>
   <head>
     <meta charset="UTF-8">
     <title>WoT Daemon</title>
     <link rel="stylesheet" href="css/main.css">
   </head>
-  <body fullbleed unresolved class="hidden">
-    <div class="x" id="close"></div>
-    <h1>WoT Daemon</h1>
-    <pre id="logs"></pre>
+  <body>
+    <div id="header" draggable="true">
+      <h1>WoT Daemon</h1>
+      <div class="x" id="close"></div>
+    </div>
+    <div class="content">
+      <pre id="logs"></pre>
+    </div>
     <script defer src="js/main.js"></script>
   </body>
 </html>

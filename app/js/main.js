@@ -13,11 +13,12 @@
   var gui = require('nw.gui');
   var win = gui.Window.get();
   var tray;
+  var header = document.getElementById('header');
   var closeButton = document.getElementById('close');
 
   win.focus();
   closeButton.addEventListener('click', function() {
-    win.close();
+    win.hide();
   });
 
   tray = new gui.Tray({
@@ -30,7 +31,7 @@
   menu.append(new gui.MenuItem({
     label: 'About',
     click: function() {
-      if (confirm('WoT Daemon: Web of Things made easy.\n' +
+      if (confirm('WoT Daemon: Web of Things development made easy.\n' +
         'Visit our web site for more information?')) {
         gui.Shell.openExternal('https://github.com/elin-moco/wot-daemon');
       }
@@ -41,6 +42,7 @@
     label: 'Show',
     click: function() {
       win.show();
+      win.focus();
     }
   }));
   menu.append(new gui.MenuItem({
@@ -57,5 +59,24 @@
     }
   }));
   tray.menu = menu;
+
+  var prevDragX, prevDragY;
+  header.addEventListener('dragstart', function(e) {
+    prevDragX = e.screenX;
+    prevDragY = e.screenY;
+  });
+  header.addEventListener('drag', function(e) {
+    if (prevDragX != null && prevDragY != null && (e.screenX > 0 || e.screenY > 0)) {
+      var moveX = e.screenX - prevDragX;
+      var moveY = e.screenY - prevDragY;
+      win.moveBy(moveX, moveY);
+    }
+    prevDragX = e.screenX;
+    prevDragY = e.screenY;
+  });
+  header.addEventListener('dragend', function(e) {
+    prevDragX = null;
+    prevDragY = null;
+  });
 })();
 
