@@ -7,6 +7,10 @@ A desktop daemon to help you development WoT apps directly on the Web.
 Download and unzip the package for your OS from [Releases page], currently only
 tested on Mac OSX.
 
+#Usage
+
+Please check [serialport-io] for reference.
+
 #Development
 
 ##Prerequistics
@@ -34,3 +38,4 @@ gulp build
 
 [nw.js]: https://github.com/nwjs/nw.js/
 [Releases page]: https://github.com/elin-moco/wot-daemon/releases
+[serialpor-io]: https://github.com/elin-moco/serialport-io/
