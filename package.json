@@ -1,6 +1,6 @@
 {
   "name": "wot-daemon",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Desktop daemon for wot development",
   "main": "app/index.html",
   "scripts": {
@@ -39,7 +39,7 @@
   },
   "chromium-args": "--child-clean-exit",
   "dependencies": {
-    "serialport-io": "^0.1.0"
+    "serialport-io": "^0.1.3"
   },
   "devDependencies": {
     "del": "^1.2.0",

@@ -69,8 +69,7 @@ function compress(os, type, dest) {
     gulp.src(dest + '/' + os + '/**')
       .pipe(zip('wot-daemon-' + os + '.zip'))
       .pipe(gulp.dest(dest));
-  }
-  else if (type === 'tar') {
+  } else if (type === 'tar') {
     console.log('Compressing wot-daemon-' + os + '.tar.gz');
     gulp.src(dest + '/' + os + '/**')
       .pipe(tar('wot-daemon-' + os + '.tar'))
@@ -84,11 +83,12 @@ gulp.task('build', function() {
     var nw = new NwBuilder({
       appName: 'WoT Daemon',
       macIcns: 'app/img/wot-daemon.icns',
-      files: ['package.json', 'app/**', 'node_modules/serialport-io/**', 'node_modules/ble-serialport/**'], // use the glob format
+      files: ['package.json', 'app/**', 'node_modules/serialport-io/**',
+        'node_modules/ble-serialport/**'], // use the glob format
       platforms: ['osx', 'linux', 'win']
     });
-    nw.on('log',  console.log);
-    nw.build().then(function () {
+    nw.on('log', console.log);
+    nw.build().then(function() {
       var dest = 'build/WoT Daemon';
       compress('osx64', 'zip', dest);
       compress('osx32', 'zip', dest);
@@ -97,7 +97,7 @@ gulp.task('build', function() {
       compress('win64', 'zip', dest);
       compress('win32', 'zip', dest);
       console.log('Build all done!');
-    }).catch(function (error) {
+    }).catch(function(error) {
       console.error(error);
     });
   });

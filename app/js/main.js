@@ -60,13 +60,15 @@
   }));
   tray.menu = menu;
 
-  var prevDragX, prevDragY;
+  var prevDragX;
+  var prevDragY;
   header.addEventListener('dragstart', function(e) {
     prevDragX = e.screenX;
     prevDragY = e.screenY;
   });
   header.addEventListener('drag', function(e) {
-    if (prevDragX != null && prevDragY != null && (e.screenX > 0 || e.screenY > 0)) {
+    if (prevDragX != null && prevDragY != null &&
+      (e.screenX > 0 || e.screenY > 0)) {
       var moveX = e.screenX - prevDragX;
       var moveY = e.screenY - prevDragY;
       win.moveBy(moveX, moveY);
