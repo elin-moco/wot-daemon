@@ -16,6 +16,7 @@ var tar = require('gulp-tar');
 var options = {
   param: { // Project settings
     debug: false,
+    cache: 'cache',
     build: 'build',
     dist: 'dist'
   }
@@ -45,6 +46,7 @@ gulp.task('sloc', function() {
 
 gulp.task('clean', function(cb) {
   return del([
+    options.param.cache,
     options.param.build,
     options.param.dist
   ], cb);
