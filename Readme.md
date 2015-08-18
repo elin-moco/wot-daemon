@@ -38,4 +38,5 @@ gulp build
 
 [nw.js]: https://github.com/nwjs/nw.js/
 [Releases page]: https://github.com/elin-moco/wot-daemon/releases
-[serialpor-io]: https://github.com/elin-moco/serialport-io/
+[serialport-io]: https://github.com/elin-moco/serialport-io/
+
