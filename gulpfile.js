@@ -83,6 +83,7 @@ function compress(os, type, dest) {
 gulp.task('build', function() {
     var NwBuilder = require('nw-builder');
     var nw = new NwBuilder({
+      version: '0.12.3',
       appName: 'WoT Daemon',
       macIcns: 'app/img/wot-daemon.icns',
       files: ['package.json', 'app/**', 'node_modules/serialport-io/**',

@@ -39,7 +39,7 @@
   },
   "chromium-args": "--child-clean-exit",
   "dependencies": {
-    "serialport-io": "^0.1.4"
+    "serialport-io": "^0.1.10"
   },
   "devDependencies": {
     "del": "^1.2.0",
